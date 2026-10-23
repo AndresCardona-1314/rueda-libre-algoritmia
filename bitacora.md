@@ -137,11 +137,29 @@ El algoritmo final es la secuencia reestructurada de los pasos 1 al 38. En resum
 6. Si paga, entregar la bicicleta cuando corresponda; si la reserva es para otra fecha, informarle el horario de atención. Si agregó un recorrido, indicarle el punto de encuentro y finalizar la venta.
 
 
+## Primera cotización
+
+
+| entrada                  | proceso                                                   | salida                          |
+|Horas de renta entero     |Se toma el valor para calcular el total a pagar            |Se muestra el total de horas     |
+|Precio por hora entero    |Es la constante utilizada para determinar el total a pagar |                                 |
+|nombre del cliente string |Se solicita el nombre para generar el mensaje total        |Se muestra el nombre del cliente |
+|total entero              |Acá se ejecuta el calculo del total a pagar (horas*precio) |Se muestra el total              |
 
 
 
+### Ejecución del algoritmo con casos de prueba
+
+El algoritmo establece un precio fijo de **$10.000 por hora**. Para cada caso, se multiplica ese precio por las horas ingresadas y se muestra el resultado junto con el nombre del cliente.
+
+| Entrada                             | Resultado esperado (cálculo manual) | Resultado obtenido                                 |
+|-------------------------------------|-------------------------------------|----------------------------------------------------|
+| Nombre: Ana; horas de alquiler: 1   | 1 × $10.000 = **$10.000**           | Hola, Ana: tu alquiler de 1 horas cuesta $ 10000   |
+| Nombre: Luis; horas de alquiler: 3  | 3 × $10.000 = **$30.000**           | Hola, Luis: tu alquiler de 3 horas cuesta $ 30000  |
+| Nombre: María; horas de alquiler: 8 | 8 × $10.000 = **$80.000**           | Hola, María: tu alquiler de 8 horas cuesta $ 80000 |
 
 
 
+```text
 
-
+Si se ingresa un valor de horas en 0 o en un número negativo el calculo se sigue ejecutando igual solo que si el valor ingresado es cero me mostrará el total en 0 y si el valor ingresado es un número negativo mostrara el total negativo.
