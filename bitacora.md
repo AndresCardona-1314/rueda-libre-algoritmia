@@ -213,3 +213,19 @@ En la tabla, `—` indica que la variable aún no tiene valor asignado. Las inst
 **Rectángulo:** Procesos
 
 **Rombo:** Decisión 
+
+
+## Asistente de taquilla v0.1
+
+1. Se necesita calcular el valor del alquiler de las bicicletas para ello se necesita saber el tipo de bicicleta, por cuántas horas se alquilaran, el precio correspondiente y cuantas personas.
+2. Se necesita calcular el valor del recorrido para  ello se necesita saber que recorrido harán, el precio del recorrido y la cantidad de personas.
+3. el subtotal sería la suma del valor del alquiler más el valor del recorrido
+4. El aporte voluntario se calcula a partir del subtotal y es el 10% del mismo
+5. el total sería la suma del subtotal más el aporte voluntario 
+6. Por ultimo se calcula el valor a pagar por cada integrante, que se haría dividiendo el total por el número de personas
+
+
+
+
+
+
