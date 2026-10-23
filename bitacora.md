@@ -141,6 +141,7 @@ El algoritmo final es la secuencia reestructurada de los pasos 1 al 38. En resum
 
 
 | entrada                  | proceso                                                   | salida                          |
+|--------------------------|-----------------------------------------------------------|---------------------------------|
 |Horas de renta entero     |Se toma el valor para calcular el total a pagar            |Se muestra el total de horas     |
 |Precio por hora entero    |Es la constante utilizada para determinar el total a pagar |                                 |
 |nombre del cliente string |Se solicita el nombre para generar el mensaje total        |Se muestra el nombre del cliente |
@@ -163,3 +164,52 @@ El algoritmo establece un precio fijo de **$10.000 por hora**. Para cada caso, s
 ```text
 
 Si se ingresa un valor de horas en 0 o en un número negativo el calculo se sigue ejecutando igual solo que si el valor ingresado es cero me mostrará el total en 0 y si el valor ingresado es un número negativo mostrara el total negativo.
+
+```
+
+
+
+## Cotización recorrridos guiados
+
+
+### Prueba de escritorio: grupo de 4 personas en Sabores de Barrio
+
+**Entradas:** selección del recorrido = 2 (Sabores de Barrio); cantidad de personas = 4.
+
+**Precio por persona:** $60.000
+
+En la tabla, `—` indica que la variable aún no tiene valor asignado. Las instrucciones `Escribir` muestran información, pero no cambian las variables; por eso se registran los pasos que asignan valores, reciben entradas o controlan los ciclos.
+
+| Paso e instrucción ejecutada                 | Recorrido[1..3] | Precio_Persona[1..3] | Precio | Cantidad_Personas | Total | Anticipo | Saldo_Pendiente | i | seleccion |
+|---|---|---|---:|---:|---:|---:|---:|---:|---:|
+| 1. Definir variables y dimensionar los arreglos | [—, —, —] | [—, —, —] | — | — | — | — | — | — | — |
+| 2. Recorrido[1] <- "1. Río y Parques" | ["1. Río y Parques", —, —] | [—, —, —] | — | — | — | — | — | — | — |
+| 3. Recorrido[2] <- "2. Sabores de Barrio" | ["1. Río y Parques", "2. Sabores de Barrio", —] | [—, —, —] | — | — | — | — | — | — | — |
+| 4. Recorrido[3] <- "3. Reto Las Palmas" | ["1. Río y Parques", "2. Sabores de Barrio", "3. Reto Las Palmas"] | [—, —, —] | — | — | — | — | — | — | — |
+| 5. Precio_Persona[1] <- 45000 | ["1. Río y Parques", "2. Sabores de Barrio", "3. Reto Las Palmas"] | [45000, —, —] | — | — | — | — | — | — | — |
+| 6. Precio_Persona[2] <- 60000 | ["1. Río y Parques", "2. Sabores de Barrio", "3. Reto Las Palmas"] | [45000, 60000, —] | — | — | — | — | — | — | — |
+| 7. Precio_Persona[3] <- 85000 | ["1. Río y Parques", "2. Sabores de Barrio", "3. Reto Las Palmas"] | [45000, 60000, 85000] | — | — | — | — | — | — | — |
+| 8. Ciclo `Para`: primera iteración | ["1. Río y Parques", "2. Sabores de Barrio", "3. Reto Las Palmas"] | [45000, 60000, 85000] | — | — | — | — | — | 1 | — |
+| 9. Ciclo `Para`: segunda iteración | ["1. Río y Parques", "2. Sabores de Barrio", "3. Reto Las Palmas"] | [45000, 60000, 85000] | — | — | — | — | — | 2 | — |
+| 10. Ciclo `Para`: tercera iteración | ["1. Río y Parques", "2. Sabores de Barrio", "3. Reto Las Palmas"] | [45000, 60000, 85000] | — | — | — | — | — | 3 | — |
+| 11. Fin del ciclo `Para` | ["1. Río y Parques", "2. Sabores de Barrio", "3. Reto Las Palmas"] | [45000, 60000, 85000] | — | — | — | — | — | 4 | — |
+| 12. Leer `seleccion` (se ingresa 2) | ["1. Río y Parques", "2. Sabores de Barrio", "3. Reto Las Palmas"] | [45000, 60000, 85000] | — | — | — | — | — | 4 | 2 |
+| 13. Validar selección y condición de salida del `Repetir` (válida; termina el ciclo) | ["1. Río y Parques", "2. Sabores de Barrio", "3. Reto Las Palmas"] | [45000, 60000, 85000] | — | — | — | — | — | 4 | 2 |
+| 14. Precio <- Precio_Persona[seleccion] | ["1. Río y Parques", "2. Sabores de Barrio", "3. Reto Las Palmas"] | [45000, 60000, 85000] | 60000 | — | — | — | — | 4 | 2 |
+| 15. Leer `Cantidad_Personas` (se ingresa 4) | ["1. Río y Parques", "2. Sabores de Barrio", "3. Reto Las Palmas"] | [45000, 60000, 85000] | 60000 | 4 | — | — | — | 4 | 2 |
+| 16. Total <- Precio * Cantidad_Personas | ["1. Río y Parques", "2. Sabores de Barrio", "3. Reto Las Palmas"] | [45000, 60000, 85000] | 60000 | 4 | 240000 | — | — | 4 | 2 |
+| 17. Anticipo <- redon(Total * 0.3) | ["1. Río y Parques", "2. Sabores de Barrio", "3. Reto Las Palmas"] | [45000, 60000, 85000] | 60000 | 4 | 240000 | 72000 | — | 4 | 2 |
+| 18. Saldo_Pendiente <- Total - Anticipo | ["1. Río y Parques", "2. Sabores de Barrio", "3. Reto Las Palmas"] | [45000, 60000, 85000] | 60000 | 4 | 240000 | 72000 | 168000 | 4 | 2 |
+
+**Resultado:** total del recorrido = **$240.000**; anticipo = **$72.000**; saldo pendiente = **$168.000**.
+
+
+### Identificación de diagrama de flujo
+
+**Ovalo:** Inicio y fin del algoritmo
+
+**Paralelogramo:** Entrada y salida 
+
+**Rectángulo:** Procesos
+
+**Rombo:** Decisión 
